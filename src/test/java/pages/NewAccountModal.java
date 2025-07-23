@@ -1,6 +1,8 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import wrappers.*;
 
 public class NewAccountModal extends BasePage {
@@ -11,6 +13,8 @@ public class NewAccountModal extends BasePage {
 
     public void open() {
         driver.get("https://tms9-dev-ed.develop.lightning.force.com/lightning/o/Account/new");
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(
+                By.xpath("//button[@class='slds-button slds-button_brand']"))));
     }
 
     public void createAccount(

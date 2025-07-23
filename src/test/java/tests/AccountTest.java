@@ -1,11 +1,7 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static java.lang.Thread.sleep;
 
 
 public class AccountTest extends BaseTest {
@@ -14,10 +10,7 @@ public class AccountTest extends BaseTest {
     public void checkCreateAccount() throws InterruptedException {
         loginPage.open();
         loginPage.login("tborodich@tms.sandbox", "Password003!");
-        sleep(5000);
         newAccountModal.open();
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(
-                By.xpath("//button[@class='slds-button slds-button_brand']"))));
         newAccountModal.createAccount(
                 "Burt Shelby",
                 "+1-737-522-9437",
