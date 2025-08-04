@@ -3,7 +3,10 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import wrappers.*;
+
+import java.time.Duration;
 
 public class NewAccountModal extends BasePage {
 
@@ -13,6 +16,7 @@ public class NewAccountModal extends BasePage {
 
     public void open() {
         driver.get("https://tms9-dev-ed.develop.lightning.force.com/lightning/o/Account/new");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(
                 By.xpath("//button[@class='slds-button slds-button_brand']"))));
     }
