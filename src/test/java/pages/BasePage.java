@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
-public class BasePage {
+public abstract class BasePage {
 
     WebDriver driver;
     JavascriptExecutor js;
