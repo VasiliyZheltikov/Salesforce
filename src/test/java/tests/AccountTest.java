@@ -4,28 +4,18 @@ import dto.Account;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static dto.AccountFactory.getAccount;
+
 
 public class AccountTest extends BaseTest {
 
     @Test
     public void checkCreateAccount(){
-        String accountName = "Burt Shelby";
-        Account account = new Account(accountName,
-                "+1-737-522-9437",
+        Account account = getAccount(
                 "Warm",
-                "+1-215-411-8133",
-                "12345",
-                "ornaretesting.org",
-                "nec.luctus.net",
-                "BSL",
                 "Customer - Direct",
                 "Subsidiary",
-                "Media",
-                "20",
-                "$1000000",
-                "38057516",
-                "Ap #775-8758 Quisque Road",
-                "P.O. Box 637, 7094 Ante Avenue");
+                "Media");
         loginPage.open()
                 .login("tborodich@tms.sandbox", "Password003!")
                 .open();
@@ -33,7 +23,7 @@ public class AccountTest extends BaseTest {
                 .createAccount(account)
                 .saveAccount();
         Assert.assertTrue(
-                accountPage.getNotificationText().contains(String.format("Account %s was created.", accountName)),
+                accountPage.getNotificationText().contains(String.format("Account %s was created.", account.getName())),
                 "Ошибка при создании аккаунта");
     }
 }
