@@ -16,6 +16,7 @@
         <selenium.version>4.33.0</selenium.version>
         <aspectj.version>1.9.20.1</aspectj.version>
         <testng.version>7.11.0</testng.version>
+        <faker.version>1.0.2</faker.version>
     </properties>
 
     <dependencyManagement>
@@ -53,6 +54,12 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
         </dependency>
 
     </dependencies>
